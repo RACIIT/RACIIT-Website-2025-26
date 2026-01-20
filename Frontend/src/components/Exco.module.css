@@ -1,0 +1,250 @@
+:root {
+  --card-height: 300px;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
+/* MAIN CONTAINER */
+.excoContainer {
+  width: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+/* OUR TEAM */
+.ourTeam {
+  font-size: 3rem;
+  color: black;
+  text-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+  margin-bottom: 30px;
+}
+
+/* TEAM INTRO SECTION */
+.teamIntro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.teamText {
+  flex: 1;
+  min-width: 280px;
+}
+
+.teamTitle {
+  color: #ff0080;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.teamText p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.teamImageWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 280px;
+}
+
+.teamImage {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  margin-left: 86px;
+}
+
+/* EXECUTIVE COMMITTEE BOARD */
+.excoHeading {
+  font-size: 2.5rem;
+  color: black;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+/* PRESIDENT + SECRETARY ROW */
+.topTwoWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.largeCard {
+  --card-height: 310px;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
+.membersWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* MEMBER CARDS */
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 10px;
+  perspective: 2500px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.coverImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.card:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover Overlay */
+.hoverOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 50, 0.18);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.card:hover .hoverOverlay {
+  opacity: 1;
+}
+
+.hoverName {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.hoverPosition {
+  font-size: 0.85rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* AWARDS SECTION */
+.awardsHeading {
+  font-size: 3.4rem;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 3.8px;
+  margin: 60px 0 40px;
+  text-shadow: 2px 6px 8px rgba(0,0,0,0.4);
+  margin-bottom: 20px;
+}
+
+.awardsCenterImage {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.awardsImage {
+  max-width: 90%;
+  border-radius: 15px;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  margin-top: -40px;
+}
+
+.awardsIntro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+}
+
+.awardsText {
+  flex: 1;
+  min-width: 280px;
+  margin-top: -50px;
+}
+
+.awardsText p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.awardsImageWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 280px;
+  margin-top: -170px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .row {
+    gap: 15px;
+  }
+
+  .teamIntro,
+  .awardsIntro,
+  .topTwoWrapper {
+    flex-direction: column;
+  }
+
+  .teamImage,
+  .awardsImage {
+    max-width: 90%;
+  }
+}

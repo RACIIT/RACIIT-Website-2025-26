@@ -1,0 +1,75 @@
+.dome-container {
+  width: 100%;
+  height: 600px;
+  background: radial-gradient(circle at center, #111, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+}
+
+.dome-container:active {
+  cursor: grabbing;
+}
+
+.dome {
+  width: 600px;
+  height: 600px;
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
+  position: relative;
+}
+
+.dome-image {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.dome-image:hover {
+  transform: scale(1.2);
+  z-index: 100;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+}
+
+/* Popup overlay */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-content {
+  max-width: 85%;
+  max-height: 85%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.popup-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

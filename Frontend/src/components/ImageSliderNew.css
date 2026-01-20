@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
+
+.carousel-container {
+  width: 100%;
+  height: calc(100vh - 70px); /* full viewport minus navbar height */
+  position: relative;
+  margin-top: 70px; /* adjust to navbar height */
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  top: 26px;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 86%;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+  filter: brightness(86%); /* Darken the image for readability */
+}
+
+/* Add a gradient overlay for extra text clarity */
+.carousel-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 86%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55));
+  z-index: 5;
+}
+
+.carousel-content {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  color: white;
+  max-width: 500px;
+  z-index: 10; /* Ensure text stays above overlay */
+}
+
+.carousel-content h2 {
+  font-size: 60px;
+  margin: 0 0 20px 0;
+  animation: slideInLeft 1s ease-in-out;
+  color: white;
+}
+
+.carousel-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  animation: slideInRight 1s ease-in-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+  color: white;
+}
+
+.readMore {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: 2px solid #fff;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.readMore:hover {
+  background: red;
+  color: #fff;
+}
+
+/* Navigation arrows */
+.arrows {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  display: flex;
+  gap: 10px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.arrows button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.arrows button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Slide-in animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 999px) {
+  .carousel-content {
+    left: 30px;
+  }
+  .carousel-content h2 {
+    font-size: 48px;
+  }
+  .carousel-content p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .carousel-content {
+    left: 20px;
+    width: 80%;
+  }
+  .carousel-content h2 {
+    font-size: 32px;
+  }
+  .carousel-content p {
+    font-size: 14px;
+  }
+  .arrows {
+    right: 20px;
+  }
+  .arrows button {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}

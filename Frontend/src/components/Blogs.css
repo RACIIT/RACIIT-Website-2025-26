@@ -1,0 +1,130 @@
+.blogs-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 8vw;
+  background: #fff;
+  color: #222;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+/* LEFT SIDE TEXT */
+.blogs-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.blogs-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ff4da6; /* pink */
+  text-shadow: 2px 2px 0 #000;
+  margin-bottom: 1.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.blogs-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+/* CLICK HERE BUTTON */
+.blogs-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff4da6, #ff7cc8);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 77, 166, 0.4);
+}
+
+.blogs-btn:hover {
+  background: linear-gradient(135deg, #ff7cc8, #ff4da6);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 77, 166, 0.6);
+}
+
+/* RIGHT SIDE IMAGES */
+.blogs-images {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px; 
+  height: 280px;
+  margin-left: 100px; 
+}
+
+.blog-img {
+  width: 440px;  
+  height: 250px; 
+  object-fit: cover;
+  border-radius: 20px;
+  position: absolute;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, z-index 0.3s ease;
+}
+
+/* Positions */
+.blog-center {
+  z-index: 3;
+  transform: translateX(0);
+}
+
+.blog-left {
+  z-index: 2;
+  transform: translateX(-150px) rotate(-4deg);
+  filter: brightness(85%);
+}
+
+.blog-right {
+  z-index: 2;
+  transform: translateX(150px) rotate(4deg);
+  filter: brightness(85%);
+}
+
+/* Hover Effects */
+.blog-center:hover {
+  transform: scale(1.05);
+  z-index: 4;
+}
+
+.blog-left:hover,
+.blog-right:hover {
+  transform: scale(1.03);
+  z-index: 4;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .blogs-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .blogs-images {
+    width: 100%;
+    height: 220px;
+    margin-top: 2rem;
+  }
+
+  .blog-img {
+    width: 300px;
+    height: 180px;
+  }
+
+  .blog-left {
+    transform: translateX(-80px) rotate(-4deg);
+  }
+
+  .blog-right {
+    transform: translateX(80px) rotate(4deg);
+  }
+}

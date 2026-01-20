@@ -1,0 +1,14 @@
+.award-caption.gold {
+  color: #FFD700;
+  font-weight: 600;
+}
+
+.award-caption.silver {
+  color: #C0C0C0;
+  font-weight: 600;
+}
+
+.award-caption.bronze {
+  color: #CD7F32;
+  font-weight: 600;
+}

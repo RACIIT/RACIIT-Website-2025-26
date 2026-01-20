@@ -1,0 +1,228 @@
+.HomeHero {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+  background: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  filter: brightness(1.4);
+  z-index: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.heroSlogan {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+
+.gallery {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  color: white;
+}
+
+.galhead {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.galhead h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.galhead p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.img-gallery-flex {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.image-gallery {
+  flex: 1 1 300px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.image-gallery:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.image-gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.image-gallery h2 {
+  margin: 0.75rem 1rem 0.25rem;
+  font-size: 1.25rem;
+  color: #001f4d;
+}
+
+.image-gallery p {
+  margin: 0 1rem 1rem;
+  color: #555;
+  font-size: 1rem;
+}
+
+.counter-section {
+  background: linear-gradient(to right, black 40%, #000080 100%);
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  color: white;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.counter-box h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: #f44336;
+}
+
+.counter-box p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.destination {
+  max-width: 1100px;
+  margin: 4rem auto 6rem;
+  padding: 0 1rem;
+  color: white;
+}
+
+.destination h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.destination p {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.25rem;
+  color: #444;
+}
+
+.first-des {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.des-text {
+  flex: 1 1 400px;
+}
+
+.des-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.des-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.image {
+  display: flex;
+  gap: 1rem;
+  flex: 1 1 400px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.image img {
+  width: 48%;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.image img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .avenues-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  .img-gallery-flex {
+    flex-direction: column;
+  }
+  .first-des {
+    flex-direction: column;
+  }
+  .image img {
+    width: 100%;
+  }
+}
+.slogan{
+  font-size: 2rem;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 20px;
+}
+.slogan-image-wrapper {
+  margin: 0;       /* remove outer spacing */
+  padding: 0;
+  margin-top: -80px;   /* pulls slogan up to remove gap */
+}
+
+.slogan-image {
+  width: 100%;        /* stretch full width */
+  height: 86px;       /* keep aspect ratio */
+  max-height: 300px;  /* control how short it gets */
+  display: block;
+}

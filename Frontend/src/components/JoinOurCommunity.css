@@ -1,0 +1,145 @@
+.join-community-section {
+  /* Start faded black higher */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,1) 100%);
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.join-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.join-title {
+  font-size: 2.8rem;
+  letter-spacing: 3px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.join-description {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.85;
+}
+
+/* Corrected Split Hover Button */
+.join-btn {
+  position: relative;
+  display: inline-block;
+  padding: 14px 36px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: black;              /* letters black initially */
+  background-color: #f84364; /* red background initially */
+  border: 2px solid #f84364;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+.join-btn::before,
+.join-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #000;    /* black on hover */
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+.join-btn::before {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.join-btn::after {
+  right: 0;
+  transform: translateX(100%);
+}
+
+.join-btn:hover::before {
+  transform: translateX(0);
+}
+
+.join-btn:hover::after {
+  transform: translateX(0);
+}
+
+.join-btn:hover {
+  color: #fff;               /* letters white on hover */
+  background-color: #000;    /* button black on hover */
+  border-color: #f84364;
+}
+
+/* Social Icons */
+.social-links {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.social-links li {
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-links li img {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.social-links li:hover {
+  background-color: #f84364;
+  transform: translateY(-4px);
+}
+
+.social-links li:hover img {
+  filter: grayscale(0%);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .join-title {
+    font-size: 2rem;
+  }
+
+  .join-description {
+    font-size: 1rem;
+  }
+
+  .join-btn {
+    font-size: 1rem;
+    padding: 12px 28px;
+  }
+
+  .social-links {
+    gap: 15px;
+  }
+
+  .social-links li {
+    height: 45px;
+    width: 45px;
+  }
+
+  .social-links li img {
+    width: 20px;
+    height: 20px;
+  }
+}

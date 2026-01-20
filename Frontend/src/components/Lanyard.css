@@ -1,0 +1,16 @@
+.lanyard-wrapper {
+  width: 100%;
+  height: 500px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* move the entire canvas up */
+  margin-top: -38px; /* adjust this number as needed */
+  background: transparent;
+  overflow: visible; /* ensure nothing is clipped */
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}

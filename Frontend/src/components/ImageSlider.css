@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.carousel {
+  height: 100vh;
+  margin-top: -50px;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  background: transparent; /* changed from #000 to transparent */
+  color: #eee;
+  font-family: 'Poppins', sans-serif;
+}
+
+.carousel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3); /* subtle dark overlay */
+  pointer-events: none;
+  z-index: 0;
+}
+
+.carousel .list {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 1; /* above overlay */
+}
+
+.carousel .list .item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0 0 0 0;
+  opacity: 1;
+  transition: opacity 1s ease; /* smoother fade */
+  box-sizing: border-box;
+  padding: 20px 10%;
+  background: transparent; /* explicit transparent background */
+  z-index: 0;
+}
+
+.carousel .list .item:nth-child(1) {
+  z-index: 2; /* top slide */
+}
+
+/* To create crossfade effect, we'll handle opacity in JS or CSS classes */
+/* For demonstration, all items except first have opacity 0 */
+.carousel .list .item:not(:nth-child(1)) {
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel .list .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  filter: brightness(0.65);
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Your requested CSS snippet starts here */
+.carousel .list .item .author {
+  font-weight: 700;
+  letter-spacing: 3px; /* Slightly less */
+  font-size: 1.1rem; /* smaller for subtlety */
+  margin-bottom: 0.5rem; /* more spacing */
+  text-transform: uppercase;
+  opacity: 0.8; /* softer */
+}
+
+.carousel .list .item .title {
+  font-size: 2.2rem; /* slightly smaller for balance */
+  font-weight: 900;
+  line-height: 1.3em;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 3px 6px #0009; /* less intense shadow */
+}
+
+.carousel .list .item .topic {
+  font-size: 1.4rem; /* smaller for better hierarchy */
+  font-weight: 600;
+  color: #f1683a;
+  margin-bottom: 1.2rem;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.carousel .list .item .des {
+  font-size: 0.95rem; /* slight size reduction for readability */
+  line-height: 1.6;
+  font-weight: 300;
+  max-height: 260px; /* a bit smaller */
+  overflow-y: auto;
+  margin-bottom: 1.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: #f44336 transparent;
+  padding-right: 0.5rem;
+  background: rgba(0, 0, 0, 0.3); /* subtle background to separate text */
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px #0008;
+}
+
+/* Scrollbar remains same */
+.carousel .list .item .des::-webkit-scrollbar {
+  width: 6px;
+}
+
+.carousel .list .item .des::-webkit-scrollbar-thumb {
+  background-color: #f44336;
+  border-radius: 3px;
+}
+
+/* Buttons tweaks */
+.carousel .list .item .buttons {
+  display: flex;
+  gap: 15px; /* bigger gap */
+}
+
+.carousel .list .item .buttons button {
+  padding: 12px 30px; /* bigger padding for better click area */
+  font-size: 0.9rem; /* slightly smaller text */
+  letter-spacing: 1.5px;
+  border-radius: 25px; /* slightly less round */
+  transition: background-color 0.25s ease;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 678px) {
+  .carousel .list .item .content {
+    width: 90%;
+    padding-right: 0;
+  }
+  .carousel .list .item .content .title {
+    font-size: 1.6rem; /* smaller title on mobile */
+  }
+  .carousel .list .item .content .author {
+    font-size: 1rem; /* smaller author */
+  }
+  .carousel .list .item .content .topic {
+    font-size: 1.1rem;
+  }
+  .carousel .list .item .content .des {
+    font-size: 0.9rem;
+    max-height: 160px;
+  }
+  .thumbnail {
+    display: none;
+  }
+}
+
+/* Thumbnail Section and arrows remain unchanged */
+/* (Keep the rest of your CSS as is) */

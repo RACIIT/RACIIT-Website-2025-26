@@ -1,0 +1,91 @@
+.sport-hero {
+  position: relative;
+  width: 100%;
+  height: 400px; 
+  overflow: hidden;
+  margin-top: 80px;
+}
+
+.sport-hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7); 
+}
+
+/* Dark overlay on top of video */
+.sport-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); 
+  z-index: 1;
+}
+
+.sport-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.sport-overlay h1 {
+  font-size: 3rem; 
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.sport-overlay p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+.sport-subtitle{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.sport-spotlight-section {
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sport-projects-section {
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  background-color: #141b22;
+}
+
+.sport-game-button {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.sport-game-button img {
+  width: 50px;  
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  object-fit: cover;
+}
+
+.sport-game-button img:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 18px rgba(0, 255, 128, 0.7);
+}
